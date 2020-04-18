@@ -1,0 +1,39 @@
+name: integration
+
+on: 
+  push:
+    branches:
+      - master
+  pull_request
+
+jobs:
+  ci:
+    name: Continuous Integration
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        fetch-depth: 1
+        lfs: true
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Install
+      run: |
+        npm install
+      env:
+        CI: true
+
+    - name: Test
+      run: |
+        npm test
+      env:
+        CI: true
