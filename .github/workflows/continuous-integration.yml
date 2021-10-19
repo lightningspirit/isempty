@@ -1,10 +1,6 @@
 name: integration
 
-on: 
-  push:
-    branches:
-      - master
-  pull_request
+on: pull_request
 
 jobs:
   ci:
@@ -13,27 +9,27 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [14.x]
 
     steps:
-    - uses: actions/checkout@v1
-      with:
-        fetch-depth: 1
-        lfs: true
+      - uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+          lfs: true
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
 
-    - name: Install
-      run: |
-        npm install
-      env:
-        CI: true
+      - name: Install
+        run: |
+          npm install
+        env:
+          CI: true
 
-    - name: Test
-      run: |
-        npm test
-      env:
-        CI: true
+      - name: Test
+        run: |
+          npm test
+        env:
+          CI: true

@@ -9,6 +9,7 @@ describe('isempty()', () => {
     [Infinity, false],
     [NaN, false],
     ['string', false],
+    [' ', false],
     [1, false],
     [{}, true],
     [[], true],
@@ -22,5 +23,20 @@ describe('isempty()', () => {
     [new Set(), true],
   ])('isempty(%p)', (value, expected) => {
     expect(isempty(value)).toBe(expected);
+  });
+});
+
+describe('isempty.false()', () => {
+  test.each([
+    [false, true],
+    ['', false],
+    [undefined, false],
+    [0, false],
+    [Infinity, false],
+    [NaN, false],
+    [{}, false],
+    [[], false],
+  ])('isempty.false(%p)', (value, expected) => {
+    expect(isempty.false(value)).toBe(expected);
   });
 });
