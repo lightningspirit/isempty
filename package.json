@@ -22,9 +22,6 @@
     "type": "git",
     "url": "git+https://github.com/lightningspirit/isempty.git"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "keywords": [
     "empty",
     "js",
