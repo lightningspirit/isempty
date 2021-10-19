@@ -1,7 +1,7 @@
 {
   "name": "@lightningspirit/isempty",
   "version": "0.1.0",
-  "description": "Test for emptiness of any value",
+  "description": "Test for the emptiness of any value",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
