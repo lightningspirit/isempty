@@ -1,14 +1,12 @@
 interface IsEmptyOptions {
-  falseIsEmpty?: boolean
+  falseIsEmpty?: boolean;
 }
 
-const isempty = (value: any, {
-  falseIsEmpty = false
-}: IsEmptyOptions = {}) =>
+const isempty = (value: any, { falseIsEmpty = false }: IsEmptyOptions = {}) =>
   value === null ||
   value === undefined ||
   value === '' ||
-  falseIsEmpty && value === false ||
+  (falseIsEmpty && value === false) ||
   (value.constructor === Object && Object.keys(value).length === 0) ||
   (Array.isArray(value) && value.length === 0) ||
   (value.constructor === Map && value.size === 0) ||

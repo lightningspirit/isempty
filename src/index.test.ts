@@ -48,9 +48,11 @@ describe('isempty() with false as empty', () => {
     [new Function(), false],
     [new Set(), true],
   ])('isempty(%p, {falseIsEmpty: true})', (value, expected) => {
-    expect(isempty(value, {
-      falseIsEmpty: true,
-    })).toBe(expected);
+    expect(
+      isempty(value, {
+        falseIsEmpty: true,
+      }),
+    ).toBe(expected);
   });
 });
 
