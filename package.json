@@ -44,7 +44,7 @@
   "homepage": "https://github.com/lightningspirit/isempty#readme",
   "devDependencies": {
     "@types/jest": "^27.0.2",
-    "jest": "^27.3.1",
+    "jest": "^30.2.0",
     "npm-check-updates": "^19.3.1",
     "prettier": "^2.4.1",
     "ts-jest": "^27.0.7",
